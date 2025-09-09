@@ -1,6 +1,6 @@
 /*
  * pth_15 DPL translator interface library
- * Copyright (C) 2024 Suomen Kanuuna Oy
+ * Copyright (C) 2025 Suomen Kanuuna Oy
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
