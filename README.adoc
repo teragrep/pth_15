@@ -3,27 +3,31 @@
 // 2. Update the issues link in Contributing section in the readme file
 // 3. Update the discussion link in config.yml file in .github/ISSUE_TEMPLATE directory
 
-= repo-template
+= pth_15 - DPL translator interface library for Teragrep
 
 // Add a short description of your project. Tell what your project does and what it's used for.
 
-This is a template repository for Teragrep organization.
+This library contains the necessary interfaces to run the pth_10 DPL translator component in the DPL interpreter
+without being a direct dependency.
 
 == Features
 
 // List your project's features
+* DPLExecutor interface, which should be implemented in the pth_10 component.
+* DPLExecutorFactory, that can be used to load the implementation class without a direct Maven dependency.
+* DPLExecutorResult interface, which contains the result of the DPLExecutor. Should be implemented in the pth_10 component.
 
 == Documentation
 
 See the official documentation on https://docs.teragrep.com[docs.teragrep.com].
 
-== Limitations
-
-// If your project has limitations, please list them. Otherwise remove this section.
-
-== How to [compile/use/implement]
+== How to compile
 
 // add instructions how people can start to use your project
+[source,bash]
+----
+$ mvn clean package
+----
 
 == Contributing
 
