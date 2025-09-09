@@ -45,7 +45,7 @@
  */
 package com.teragrep.pth_15;
 
-import java.util.List;
+import java.util.Map;
 
 public interface DPLExecutorResult {
 
@@ -57,5 +57,5 @@ public interface DPLExecutorResult {
 
     public abstract String message();
 
-    public abstract List<String> messageLogMessages();
+    public abstract Map<String, String> metrics();
 }
