@@ -52,13 +52,14 @@ import org.apache.spark.sql.streaming.StreamingQueryListener;
 
 import java.util.concurrent.TimeoutException;
 import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 
 public interface DPLExecutor {
 
     public DPLExecutorResult interpret(
             BiConsumer<Dataset<Row>, Boolean> batchHandler,
+            Consumer<StreamingQueryListener.QueryProgressEvent> queryProgressConsumer,
             SparkSession sparkSession,
-            StreamingQueryListener listener,
             String noteId,
             String paragraphId,
             String lines

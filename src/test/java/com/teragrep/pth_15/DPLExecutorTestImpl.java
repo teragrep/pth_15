@@ -53,6 +53,7 @@ import org.apache.spark.sql.streaming.StreamingQueryListener;
 
 import java.util.concurrent.TimeoutException;
 import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 
 public final class DPLExecutorTestImpl implements DPLExecutor {
 
@@ -62,8 +63,8 @@ public final class DPLExecutorTestImpl implements DPLExecutor {
     @Override
     public DPLExecutorResult interpret(
             final BiConsumer<Dataset<Row>, Boolean> batchHandler,
+            final Consumer<StreamingQueryListener.QueryProgressEvent> queryProgressConsumer,
             final SparkSession sparkSession,
-            final StreamingQueryListener listener,
             final String noteId,
             final String paragraphId,
             final String lines
