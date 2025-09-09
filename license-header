@@ -1,5 +1,5 @@
 /*
- * pth_15 DPL translator interface library
+ * pth_15 DPL translator interface library for Teragrep
  * Copyright (C) 2025 Suomen Kanuuna Oy
  *
  * This program is free software: you can redistribute it and/or modify
