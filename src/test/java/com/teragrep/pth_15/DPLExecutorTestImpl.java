@@ -71,7 +71,7 @@ public final class DPLExecutorTestImpl implements DPLExecutor {
             SparkSession sparkSession,
             String noteId,
             String paragraphId,
-            String linesnj
+            String lines
     ) throws TimeoutException {
         throw new UnsupportedOperationException("Not supported.");
     }
