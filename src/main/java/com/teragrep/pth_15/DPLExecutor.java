@@ -48,22 +48,16 @@ package com.teragrep.pth_15;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
-import org.apache.spark.sql.streaming.StreamingQuery;
-import org.apache.spark.sql.streaming.StreamingQueryListener;
 
 import java.util.concurrent.TimeoutException;
 import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 public interface DPLExecutor {
 
     public DPLExecutorResult interpret(
             BiConsumer<Dataset<Row>, Boolean> batchHandler,
-            BiConsumer<StreamingQuery, StreamingQueryListener.QueryStartedEvent> queryStartedConsumer,
-            BiConsumer<StreamingQuery, StreamingQueryListener.QueryProgressEvent> queryProgressConsumer,
-            BiConsumer<StreamingQuery, StreamingQueryListener.QueryTerminatedEvent> queryTerminatedConsumer,
-            Consumer<String> initialLogConsumer,
             SparkSession sparkSession,
+            String queryId,
             String noteId,
             String paragraphId,
             String lines
