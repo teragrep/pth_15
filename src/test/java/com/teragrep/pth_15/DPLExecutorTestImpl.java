@@ -49,6 +49,7 @@ import com.typesafe.config.Config;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
+import org.apache.spark.sql.streaming.StreamingQuery;
 import org.apache.spark.sql.streaming.StreamingQueryListener;
 
 import java.util.concurrent.TimeoutException;
@@ -62,12 +63,15 @@ public final class DPLExecutorTestImpl implements DPLExecutor {
 
     @Override
     public DPLExecutorResult interpret(
-            final BiConsumer<Dataset<Row>, Boolean> batchHandler,
-            final Consumer<StreamingQueryListener.QueryProgressEvent> queryProgressConsumer,
-            final SparkSession sparkSession,
-            final String noteId,
-            final String paragraphId,
-            final String lines
+            BiConsumer<Dataset<Row>, Boolean> batchHandler,
+            BiConsumer<StreamingQuery, StreamingQueryListener.QueryStartedEvent> queryStartedConsumer,
+            BiConsumer<StreamingQuery, StreamingQueryListener.QueryProgressEvent> queryProgressConsumer,
+            BiConsumer<StreamingQuery, StreamingQueryListener.QueryTerminatedEvent> queryTerminatedConsumer,
+            Consumer<String> initialLogConsumer,
+            SparkSession sparkSession,
+            String noteId,
+            String paragraphId,
+            String linesnj
     ) throws TimeoutException {
         throw new UnsupportedOperationException("Not supported.");
     }
