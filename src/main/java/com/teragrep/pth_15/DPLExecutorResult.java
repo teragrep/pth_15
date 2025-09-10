@@ -45,8 +45,6 @@
  */
 package com.teragrep.pth_15;
 
-import java.util.Map;
-
 public interface DPLExecutorResult {
 
     public enum Code {
@@ -56,6 +54,4 @@ public interface DPLExecutorResult {
     public abstract Code code();
 
     public abstract String message();
-
-    public abstract Map<String, String> metrics();
 }
