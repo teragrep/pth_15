@@ -50,6 +50,7 @@ import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 
+import java.time.ZonedDateTime;
 import java.util.concurrent.TimeoutException;
 import java.util.function.BiConsumer;
 
@@ -65,7 +66,8 @@ public final class DPLExecutorTestImpl implements DPLExecutor {
             String queryId,
             String noteId,
             String paragraphId,
-            String lines
+            String lines,
+            ZonedDateTime startTime
     ) throws TimeoutException {
         throw new UnsupportedOperationException("Not supported.");
     }
